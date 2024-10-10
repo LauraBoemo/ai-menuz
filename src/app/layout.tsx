@@ -28,7 +28,7 @@ const poppinsMedium = localFont({
 
 export const metadata: Metadata = {
   title: "My Menu",
-  description: "For all the texts in one taste.",
+  description: "For all the taste in the text.",
 };
 
 export default function RootLayout({
