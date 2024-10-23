@@ -1,12 +1,10 @@
 'use client'
 
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useState } from "react";
 import { Button, FormControl, Stack } from "@mui/material";
 import { ImageSelector, ImageSelectorProps, ImageType } from "../image-selector";
-import { useSignedURL } from "@/app/apis/image-upload/useSignedURL";
-import { uploadFileToPreSignedURL } from "@/app/services";
-import { useError, useLoader } from "@/app/utils";
+import { useLoader, useError } from "../../utils";
+import { useSignedURL } from "../../api/image-upload";
   
 type ImageUploaderProps = Omit<ImageSelectorProps, "value" | "onChange"> & {
     imageKey: string;

@@ -1,7 +1,7 @@
 'use client'
 
-import { getSignedURL } from "@/app/services";
 import { useState } from "react";
+import { getSignedURL } from "../../services";
 
 export interface SignedURLParams {
   fileName: string;
