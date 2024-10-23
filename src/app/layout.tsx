@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { LoaderProvider, ErrorProvider } from "./utils";
 
 const poppinsExtraLight = localFont({
   src: "./fonts/Poppins-ExtraLight.ttf",
@@ -39,7 +40,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppinsExtraLight.variable} ${poppinsThin.variable} ${poppinsRegular.variable} ${poppinsMedium.variable}`}>
-        {children}
+        <LoaderProvider>
+          <ErrorProvider>
+            {children}
+          </ErrorProvider>
+        </LoaderProvider>
       </body>
     </html>
   );
