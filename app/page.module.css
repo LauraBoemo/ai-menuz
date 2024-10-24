@@ -28,7 +28,7 @@
 }
 
 .logoTitle {
-  font-family: var(--font-poppins-light);
+  font-weight: 400;
 }
 
 a.primary {
@@ -57,14 +57,14 @@ a.primary {
 
 .image03 {
   position: absolute;
-  margin-left: -25%;
-  margin-top: -15%;
+  margin-left: -20%;
+  margin-top: -10%;
 }
 
 .image04 {
   position: absolute;
-  margin-left: -25%;
-  margin-top: 5%;
+  margin-left: -20%;
+  margin-top: 0%;
 }
 
 .image05 {

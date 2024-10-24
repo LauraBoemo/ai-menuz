@@ -1,35 +1,16 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Poppins } from 'next/font/google'
 import "./globals.css";
-
-const poppinsExtraLight = localFont({
-  src: "./fonts/Poppins-ExtraLight.ttf",
-  variable: "--font-poppins-extra-light",
-  weight: "100",
-});
-
-const poppinsThin = localFont({
-  src: "./fonts/Poppins-Thin.ttf",
-  variable: "--font-poppins-light",
-  weight: "200",
-});
-
-const poppinsRegular = localFont({
-  src: "./fonts/Poppins-regular.ttf",
-  variable: "--font-poppins-regular",
-  weight: "400",
-});
-
-const poppinsMedium = localFont({
-  src: "./fonts/Poppins-Medium.ttf",
-  variable: "--font-poppins-medium",
-  weight: "500",
-});
 
 export const metadata: Metadata = {
   title: "My Menu",
   description: "For all the taste in the text.",
 };
+
+const poppinsFont = Poppins({
+  subsets: ['latin'],
+  weight: ["400", "500"]
+})
 
 export default function RootLayout({
   children,
@@ -38,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppinsExtraLight.variable} ${poppinsThin.variable} ${poppinsRegular.variable} ${poppinsMedium.variable}`}>
+      <body className={poppinsFont.className}>
         {children}
       </body>
     </html>
