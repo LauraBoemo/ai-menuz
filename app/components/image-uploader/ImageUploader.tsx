@@ -1,97 +1,98 @@
 'use client'
 
-import React, { useEffect, useState } from "react";
-import { Button, FormControl, Stack } from "@mui/material";
+import React, { useState } from "react";
+import { Button, Stack } from "@mui/material";
 import { ImageSelector, ImageSelectorProps, ImageType } from "../image-selector";
-import { useLoader, useError } from "../../utils";
-import { useSignedURL } from "../../api/image-upload";
   
-type ImageUploaderProps = Omit<ImageSelectorProps, "value" | "onChange"> & {
-    imageKey: string;
-    imageUrl: string;
-    label?: string;
-    bucket: string;
-    onChange?: (imageUrl: string) => void;
-};
+type ImageUploaderProps = Omit<ImageSelectorProps, "value" | "onChange"> & {};
 
-export const ImageUploader: React.FC<ImageUploaderProps> = ({
-    imageUrl,
-    onChange,
-    imageKey,
-    ...props
-}) => {
+export const ImageUploader: React.FC<ImageUploaderProps> = ({ ...props }) => {
     const [image, setImage] = useState<ImageType>(null!);
-    const { setLoader } = useLoader();
-    const { setError } = useError();
-    const [getImageUploadURL] = useSignedURL();
-
-    const onImageChange = async (image: ImageType) => {
-        setImage(image);
-        try {
-            setLoader(true);
-            if (image) {
-                // @ts-ignore
-                const fileName = `${imageKey}/${image.file.name}`;
-                // @ts-ignore
-                const uploadURL = await getImageUploadURL({
-                    fileName,
-                });
-
-                // @ts-ignore
-                await uploadFileToPreSignedURL(uploadURL, image.file);
-                // @ts-ignore
-                onChange(fileName);
-                return;
-            }
-            
-            // @ts-ignore
-            onChange("");
-        } catch (ex) {
-            // @ts-ignore
-            setError(ex?.message || "Error uploading image to s3");
-            console.log("Error uploading image to s3", ex);
-        } finally {
-            setLoader(false);
+    const [file, setFile] = useState<File | null>(null);
+    const [error, setError] = useState<string>("");
+    const [success, setSuccess] = useState<string>("");
+    const [uploading, setUploading] = useState(false)
+  
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+  
+      if (!file) {
+        alert('Please select a file to upload.')
+        return
+      }
+  
+      setUploading(true)
+  
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_BASE_URL + '/api/upload',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ filename: file.name, contentType: file.type }),
         }
-    };
-
-    useEffect(() => {
-        if (imageUrl) {
-            setImage({
-                dataURL: imageUrl,
-            });
+      )
+  
+      if (response.ok) {
+        const { url, fields } = await response.json()
+  
+        const formData = new FormData()
+        Object.entries(fields).forEach(([key, value]) => {
+          formData.append(key, value as string)
+        })
+        formData.append('file', file)
+  
+        const uploadResponse = await fetch(url, {
+          method: 'POST',
+          body: formData,
+        })
+  
+        if (uploadResponse.ok) {
+          setSuccess("Upload successful!");
+        } else {
+          setError(`S3 Upload Error: ${uploadResponse}`);
         }
-    }, [imageUrl]);
+      } else {
+        setError("Failed to get pre-signed URL.");
+      }
+  
+      setUploading(false)
+    }
 
     return (
-        <FormControl fullWidth>
-            <Stack direction={"column"} spacing={1}>
-                <ImageSelector
-                    width={250}
-                    height={215}
-                    acceptType={["jpg", "jpeg", "png"]}
-                    maxFileSize={3000000}
-                    value={(image?.dataURL && image) || null}
-                    // @ts-ignore
-                    onChange={onImageChange}
-                    uploadTitle={"Click here and add the Menu's picture from your camera or gallery!"}
-                    updateTitle={"You can edit the Menu's picture by clicking here!"}
-                    maxFileSizeErrorMessage={"MaxFileSizeError"}
-                    acceptTypeErrorMessage={"AcceptTypeError"}
-                    {...props}
-                />
-                <Button 
-                    variant={"contained"} 
-                    disabled={!image?.dataURL}
-                    sx={{ 
-                        bgcolor: "#4B4B4B", 
-                        color: "#F8F5ED", 
-                        textTransform: "capitalize"
-                    }}>
-                        View Menu&apos;s Details
-                </Button>
-            </Stack>
-        </FormControl>
+        <Stack direction={"column"} spacing={1}>
+            <ImageSelector
+                width={250}
+                height={215}
+                acceptType={["jpg", "jpeg", "png"]}
+                maxFileSize={3000000}
+                value={(image?.dataURL && image) || null}
+                onChange={(e) => {
+                    setImage(e)
+                    if (e?.file) {
+                        setFile(e.file)
+                    }
+                }}
+                uploadTitle={"Click here and add the Menu's picture from your camera or gallery!"}
+                updateTitle={"You can edit the Menu's picture by clicking here!"}
+                errorMessage={error}
+                successMessage={success}
+                {...props}
+            />
+            {/* @ts-ignore */}
+            <Button 
+                onClick={handleSubmit}
+                variant={"contained"} 
+                disabled={!image?.dataURL || uploading}
+                sx={{ 
+                    bgcolor: "#4B4B4B", 
+                    color: "#F8F5ED", 
+                    textTransform: "capitalize"
+                }}>
+                    View Menu&apos;s Details
+            </Button>
+        </Stack>
     );
 };
 

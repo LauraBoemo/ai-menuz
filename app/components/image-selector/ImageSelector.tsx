@@ -6,6 +6,7 @@ import ImageUploading, { ErrorsType, ImageType, ImageUploadingPropsType } from "
 import styled from "styled-components";
 import CloseIcon from '@mui/icons-material/Close';
 import ImageIcon from '@mui/icons-material/Image';
+import styles from "./imageSelector.module.css";
 
 export type { ImageType, ErrorsType };
 
@@ -54,6 +55,7 @@ export type ImageSelectorProps = Omit<ImageUploadingPropsType, "value" | "onChan
   uploadTitle?: string;
   updateTitle?: string;
   errorMessage?: string;
+  successMessage?: string;
   acceptTypeErrorMessage?: string;
   maxFileSizeErrorMessage?: string;
   resolutionErrorMessage?: string;
@@ -67,9 +69,7 @@ export const ImageSelector: React.FC<ImageSelectorProps> = ({
   onChange,
   value,
   errorMessage,
-  acceptTypeErrorMessage,
-  maxFileSizeErrorMessage,
-  resolutionErrorMessage,
+  successMessage,
   height,
   width,
   ...props
@@ -83,9 +83,13 @@ export const ImageSelector: React.FC<ImageSelectorProps> = ({
       multiple={false}
       value={(value && [value]) || []}
     >
-      {({ imageList, onImageUpload, dragProps, errors, onImageRemove }) => {
+      {({ imageList, onImageUpload, dragProps, onImageRemove }) => {
         return (
           <Stack spacing={0.5} height={height} width={width}>
+            <div style={{ textAlign: "center" }}>
+              {errorMessage && <h5 className={styles.errorAlert}>{errorMessage}</h5>}
+              {successMessage && <h5 className={styles.successAlert}>{successMessage}</h5>}
+            </div>
             <StyledStack
               direction="column"
               onClick={onImageUpload}
@@ -115,25 +119,6 @@ export const ImageSelector: React.FC<ImageSelectorProps> = ({
               )}
               {!!imageList?.length && <StyledImage src={imageList[0]?.dataURL} />}
             </StyledStack>
-            {errors && (
-              <>
-                {errors.acceptType && (
-                  <>
-                    {acceptTypeErrorMessage || errorMessage}
-                  </>
-                )}
-                {errors.maxFileSize && (
-                  <>
-                    {maxFileSizeErrorMessage || errorMessage}
-                  </>
-                )}
-                {errors.resolution && (
-                  <>
-                    {resolutionErrorMessage || errorMessage}
-                  </>
-                )}
-              </>
-            )}
           </Stack>
         );
       }}

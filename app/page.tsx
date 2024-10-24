@@ -5,9 +5,6 @@ import styles from "./page.module.css";
 import { ImageUploader } from "./components";
 
 export default function Page() {
-  const onImageChange = (imageUrl: string) => {
-    console.log(imageUrl);
-  };
 
   return ( 
     <div className={styles.page}>
@@ -45,7 +42,7 @@ export default function Page() {
           width={250}
           height={150}
         /> 
-        <ImageUploader imageKey={""} imageUrl={""} onChange={onImageChange} bucket={"menu"} />
+        <ImageUploader />
       </main>
       <footer>
         <Image
