@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import ImageUploading, { ErrorsType, ImageType, ImageUploadingPropsType } from "react-images-uploading";
 import styled from "styled-components";
@@ -86,10 +86,8 @@ export const ImageSelector: React.FC<ImageSelectorProps> = ({
       {({ imageList, onImageUpload, dragProps, onImageRemove }) => {
         return (
           <Stack spacing={0.5} height={height} width={width}>
-            <div style={{ textAlign: "center" }}>
-              {errorMessage && <h5 className={styles.errorAlert}>{errorMessage}</h5>}
-              {successMessage && <h5 className={styles.successAlert}>{successMessage}</h5>}
-            </div>
+            {errorMessage && <Typography variant={"body1"} textAlign={"center"} color={"error"}>{errorMessage}</Typography>}
+            {successMessage && <Typography variant={"body1"} textAlign={"center"} color={"success"}>{successMessage}</Typography>}
             <StyledStack
               direction="column"
               onClick={onImageUpload}
@@ -113,7 +111,7 @@ export const ImageSelector: React.FC<ImageSelectorProps> = ({
                 <StyledContentWrapper alignItems="center">
                   <Stack alignItems="center" textAlign="center" direction="column" p={1} spacing={1}>
                     <ImageIcon />
-                    <h5 style={{ fontWeight: "lighter" }}>{!!imageList?.length ? updateTitle : uploadTitle}</h5>
+                    <Typography variant={"body1"}>{!!imageList?.length ? updateTitle : uploadTitle}</Typography>
                   </Stack>
                 </StyledContentWrapper>
               )}

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Button, Stack } from "@mui/material";
 import { ImageSelector, ImageSelectorProps, ImageType } from "../image-selector";
+import { MyMenuButton } from "../mymenu-button";
   
 type ImageUploaderProps = Omit<ImageSelectorProps, "value" | "onChange"> & {};
 
@@ -80,18 +81,14 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ ...props }) => {
                 successMessage={success}
                 {...props}
             />
-            {/* @ts-ignore */}
-            <Button 
+            <MyMenuButton 
+                // @ts-ignore
                 onClick={handleSubmit}
                 variant={"contained"} 
                 disabled={!image?.dataURL || uploading}
-                sx={{ 
-                    bgcolor: "#4B4B4B", 
-                    color: "#F8F5ED", 
-                    textTransform: "capitalize"
-                }}>
-                    View Menu&apos;s Details
-            </Button>
+            >
+              View Menu&apos;s Details
+            </MyMenuButton>
         </Stack>
     );
 };

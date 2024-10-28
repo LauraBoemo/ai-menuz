@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Poppins } from 'next/font/google'
-import "./globals.css";
+import { mainTheme } from "./themes";
+import { ThemeProvider } from "@mui/material/styles";
 
 export const metadata: Metadata = {
   title: "My Menu",
   description: "For all the taste in the text.",
 };
-
-const poppinsFont = Poppins({
-  subsets: ['latin'],
-  weight: ["400", "500"]
-})
 
 export default function RootLayout({
   children,
@@ -19,8 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppinsFont.className}>
-        {children}
+      <body style={{ margin: 0 }}>
+        <ThemeProvider theme={mainTheme}>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

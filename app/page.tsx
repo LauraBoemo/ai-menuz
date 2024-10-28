@@ -1,61 +1,45 @@
-'use client'
-
-import Image from "next/image";
-import styles from "./page.module.css";
-import { ImageUploader } from "./components";
+import { Box, Grid2 as Grid } from "@mui/material";
+import { ImageUploader, MyMenuFooter, MyMenuHeader } from "./components";
 
 export default function Page() {
 
   return ( 
-    <div className={styles.page}>
-      <header>
-        <Image
-          className={styles.image01}
-          src="/static/garlic.svg"
-          alt="Garlic"
-          width={180}
-          height={80}
-        /> 
-        <Image
-          className={styles.image02}
-          src="/static/onion.svg"
-          alt="Onion"
-          width={220}
-          height={120}
-        /> 
-        <h1 className={styles.logoTitle}>
-          My Menu
-        </h1>
-      </header>
-      <main>
-        <Image
-          className={styles.image03}
-          src="/static/seasoning.svg"
-          alt="Seasoning"
-          width={250}
-          height={150}
-        /> 
-        <Image
-          className={styles.image04}
-          src="/static/mint.svg"
-          alt="Mint"
-          width={250}
-          height={150}
-        /> 
-        <ImageUploader />
-      </main>
-      <footer>
-        <Image
-          className={styles.image05}
-          src="/static/receipt.svg"
-          alt="receipt"
-          width={350}
-          height={250}
-        /> 
-        <p>
-          Powered by AI
-        </p>
-      </footer>
-    </div>
+    <Box bgcolor={"primary.light"}>
+      <Grid 
+        container 
+        margin={"auto"}
+        textAlign={"center"}
+      >
+        <Grid 
+          alignContent={"center"}
+          bgcolor={"primary.dark"} 
+          size={{ xs: 12, md: 5 }} 
+          height={{ xs: "10vh", md: "100vh" }} 
+        >
+          <MyMenuHeader />
+        </Grid>
+        <Grid 
+          container
+          margin={"auto"}
+          textAlign={"center"}
+        >
+          <Grid 
+            size={12} 
+            alignContent={"center"} 
+            justifyItems={"center"}
+            height={{ xs: "80vh", md: "90vh" }} 
+          >
+            <ImageUploader />
+          </Grid>
+          <Grid 
+            size={12} 
+            height={"10vh"} 
+            alignContent={"center"}
+          >
+            <MyMenuFooter />
+          </Grid>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
