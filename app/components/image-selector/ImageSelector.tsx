@@ -6,7 +6,6 @@ import ImageUploading, { ErrorsType, ImageType, ImageUploadingPropsType } from "
 import styled from "styled-components";
 import CloseIcon from '@mui/icons-material/Close';
 import ImageIcon from '@mui/icons-material/Image';
-import styles from "./imageSelector.module.css";
 
 export type { ImageType, ErrorsType };
 
@@ -68,8 +67,6 @@ export const ImageSelector: React.FC<ImageSelectorProps> = ({
   updateTitle,
   onChange,
   value,
-  errorMessage,
-  successMessage,
   height,
   width,
   ...props
@@ -86,8 +83,6 @@ export const ImageSelector: React.FC<ImageSelectorProps> = ({
       {({ imageList, onImageUpload, dragProps, onImageRemove }) => {
         return (
           <Stack spacing={0.5} height={height} width={width}>
-            {errorMessage && <Typography variant={"body1"} textAlign={"center"} color={"error"}>{errorMessage}</Typography>}
-            {successMessage && <Typography variant={"body1"} textAlign={"center"} color={"success"}>{successMessage}</Typography>}
             <StyledStack
               direction="column"
               onClick={onImageUpload}

@@ -1,5 +1,5 @@
 import { Box, Grid2 as Grid } from "@mui/material";
-import { ImageUploader, MyMenuFooter, MyMenuHeader } from "./components";
+import { ImageUploader, MyMenuBody, MyMenuFooter, MyMenuHeader } from "./components";
 
 export default function Page() {
 
@@ -29,7 +29,7 @@ export default function Page() {
             justifyItems={"center"}
             height={{ xs: "80vh", md: "90vh" }} 
           >
-            <ImageUploader />
+            <MyMenuBody />
           </Grid>
           <Grid 
             size={12} 
