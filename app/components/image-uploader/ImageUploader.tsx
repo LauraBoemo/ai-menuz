@@ -16,7 +16,6 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ handleS3Upload, ..
     return (
       <Stack direction={"column"} spacing={1}>
         <ImageSelector
-          width={"30vw"}
           height={"40vh"}
           acceptType={["jpg", "jpeg", "png"]}
           maxFileSize={3000000}
