@@ -4,7 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 
 export const metadata: Metadata = {
   title: "My Menu",
-  description: "For all the taste in the text.",
+  description: "Find the taste in the text.",
 };
 
 export default function RootLayout({
