@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from "react";
-import { Button, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import { ImageSelector, ImageSelectorProps, ImageType } from "../image-selector";
 import { MyMenuButton } from "../mymenu-button";
   
@@ -14,7 +14,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ ...props }) => {
     const [success, setSuccess] = useState<string>("");
     const [uploading, setUploading] = useState(false)
   
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleS3Upload = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
   
       if (!file) {
@@ -50,6 +50,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ ...props }) => {
         })
   
         if (uploadResponse.ok) {
+          handleAIUpload(uploadResponse.url);
           setSuccess("Upload successful!");
         } else {
           setError(`S3 Upload Error: ${uploadResponse}`);
@@ -59,6 +60,30 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ ...props }) => {
       }
   
       setUploading(false)
+    }
+
+    const handleAIUpload = async (url: string) => {
+      setUploading(true);
+    
+      const apiKey = "K88134200888957";
+      const response = await fetch(
+        `https://api.ocr.space/parse/imageurl?apikey=${apiKey}&url=${url}${file.name}`, 
+        {
+          method: "GET",
+        }
+      );
+    
+      if (response.ok) {
+        const data = await response.json();
+        setSuccess("OCR completed successfully!");
+        console.log(data);
+      } else {
+        const errorText = await response.text();
+        console.error(`Error ${response.status}: ${errorText}`);
+        setError(`Failed to process image: ${errorText}`);
+      }
+    
+      setUploading(false);
     }
 
     return (
@@ -83,7 +108,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ ...props }) => {
             />
             <MyMenuButton 
                 // @ts-ignore
-                onClick={handleSubmit}
+                onClick={handleS3Upload}
                 variant={"contained"} 
                 disabled={!image?.dataURL || uploading}
             >
