@@ -1,5 +1,5 @@
 import { Box, Grid2 as Grid } from "@mui/material";
-import { ImageUploader, MyMenuBody, MyMenuFooter, MyMenuHeader } from "./components";
+import { MyMenuBody, MyMenuFooter, MyMenuHeader } from "./components";
 
 export default function Page() {
 

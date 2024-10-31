@@ -6,10 +6,10 @@ import { ImageSelector, ImageSelectorProps, ImageType } from "../image-selector"
 import { MyMenuButton } from "../mymenu-button";
   
 type ImageUploaderProps = Omit<ImageSelectorProps, "value" | "onChange"> & {
-  handleS3Upload: (file: File) => void,
+  handleImageUpload: (file: File) => void,
 };
 
-export const ImageUploader: React.FC<ImageUploaderProps> = ({ handleS3Upload, ...props }) => {
+export const ImageUploader: React.FC<ImageUploaderProps> = ({ handleImageUpload, ...props }) => {
     const [image, setImage] = useState<ImageType>(null!);
     const [file, setFile] = useState<File | null>(null);
   
@@ -31,7 +31,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ handleS3Upload, ..
           {...props}
         />
         <MyMenuButton 
-          onClick={() => handleS3Upload(file)}
+          onClick={() => handleImageUpload(file)}
           variant={"contained"} 
           disabled={!image?.dataURL}
         >
