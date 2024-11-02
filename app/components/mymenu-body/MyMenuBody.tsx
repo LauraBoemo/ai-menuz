@@ -18,7 +18,7 @@ export const MyMenuBody = () => {
       const url = await handleS3Upload({ file });
       const parsedText = await handleAIUpload({ url });
       setResult(parsedText);
-      // TODO: Review
+      // TODO: Review -- saving
       // await handleS3Delete({ url });
     } catch (error) {
       setError(error.message);
