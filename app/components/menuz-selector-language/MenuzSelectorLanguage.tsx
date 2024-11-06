@@ -21,6 +21,7 @@ export const MenuzSelectorLanguage = () => {
   return (
     <Autocomplete
       loading={isPending}
+      sx={{ width: "100% !important" }}
       options={Object.keys(locales)}
       getOptionLabel={(key) => `${localeFlagMap[key] || ""}  ${key.substring(0, 2)}-${key.substring(2, 4)}`}
       style={{ width: 300 }}

@@ -17,7 +17,7 @@ export const MenuzUploaderImage: React.FC<MenuzUploaderImageProps> = ({ handleIm
     const [file, setFile] = useState<File | null>(null);
   
     return (
-      <Stack direction={"column"} spacing={1}>
+      <Stack direction={"column"} spacing={2}>
         <MenuzSelectorImage
           height={"40vh"}
           acceptType={["jpg", "jpeg", "png"]}

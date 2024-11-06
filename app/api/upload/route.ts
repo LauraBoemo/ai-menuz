@@ -1,5 +1,5 @@
 import { createPresignedPost } from '@aws-sdk/s3-presigned-post'
-import { S3Client, DeleteObjectCommand } from '@aws-sdk/client-s3'
+import { S3Client } from '@aws-sdk/client-s3'
 
 export async function POST(request: Request) {
   const { filename, contentType } = await request.json()

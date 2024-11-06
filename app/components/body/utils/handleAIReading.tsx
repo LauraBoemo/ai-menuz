@@ -19,9 +19,10 @@ export const handleAIReading = async ({ prompt, config }: HandleAIReadingProps):
   });
 
   try {
+    // TODO: this do not want to translate. we will need another ai
     const result = await model.generateContent(`
-      Hello! This is supposed to be the content of a menu: ${prompt}. Can you make a JSON from it following this model: 
-      recipes: [{ name: "Name01", ingredients: "Ingredient01,Ingredient02,Ingredient03" }, { name: "Name02", ingredients: "Ingredient04,Ingredient05,Ingredient06" }]
+      Content of a menu: ${prompt}. Translate it to this language of this code ${document.documentElement.lang || 'en'}. Make a JSON from it TRANSLATED following this model: 
+      recipes: [{ name: "Name01", ingredients: "Ingredient01,Ingredient02,Ingredient03", suggestion: "Here, make a quick quote describing the meal taste, do NOT make it as you want to sell, BE REALISTIC" }, { name: "Name02", ingredients: "Ingredient04,Ingredient05,Ingredient06", suggestion: "Here, make a quick quote describing the meal taste" }]
     `);
     return result.response.text(); 
   } catch (error) {

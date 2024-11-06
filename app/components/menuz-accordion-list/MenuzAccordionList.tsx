@@ -23,8 +23,11 @@ export const MenuzAccordionList = ({ content }: MenuzAccordionListProps) => {
                 <Typography>{data.name}</Typography>
               </MenuzAccordionSummary>
               <MenuzAccordionDetails>
-                <Typography>
-                  {data.ingredients}
+                <Typography textAlign={"left"}>
+                  - {data.ingredients}
+                </Typography>
+                <Typography textAlign={"left"}>
+                  - {data?.suggestion}
                 </Typography>
               </MenuzAccordionDetails>
             </MenuzAccordion>
