@@ -5,3 +5,4 @@ export * from "./mymenu-footer";
 
 export * from "./image-selector";
 export * from "./image-uploader";
+export * from "./result-list";

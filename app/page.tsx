@@ -2,7 +2,6 @@ import { Box, Grid2 as Grid } from "@mui/material";
 import { MyMenuBody, MyMenuFooter, MyMenuHeader } from "./components";
 
 export default function Page() {
-
   return ( 
     <Box bgcolor={"primary.light"}>
       <Grid 

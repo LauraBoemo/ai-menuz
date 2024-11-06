@@ -12,6 +12,7 @@
     "@aws-sdk/signature-v4-crt": "^3.451.0",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@google/generative-ai": "^0.21.0",
     "@mui/icons-material": "^6.1.5",
     "@mui/material": "^6.1.5",
     "@types/node": "20.9.0",
