@@ -4,11 +4,16 @@ import React, { useState } from "react";
 import { Stack, Typography } from "@mui/material";
 import { handleAIReading, handleAIUpload, handleS3Upload } from "./utils";
 
-import { MenuzImageUploader } from "../menuz-image-uploader";
+import { MenuzUploaderImage } from "../menuz-uploader-image";
 import { MenuzButton } from "../menuz-button";
 import { MenuzAccordionList } from "../menuz-accordion-list";
+import { MenuzSelectorLanguage, SupportedLocales } from "../menuz-selector-language";
 
-export const Body = () => {
+interface BodyProps {
+  handleLayoutUpdate: (theme: SupportedLocales) => void;
+}
+
+export const Body = ({ handleLayoutUpdate }: BodyProps) => {
   const [error, setError] = useState<string>("");
   const [uploading, setUploading] = useState(false);
   const [result, setResult] = useState<string>("");
@@ -42,7 +47,12 @@ export const Body = () => {
     >
       {error && <Typography variant={"body1"} textAlign={"center"} color={"error"}>{error}</Typography>}
       {uploading && <Typography>Reading the Menu...</Typography>}
-      {!uploading && !result && <MenuzImageUploader handleImageUpload={handleImageUpload} />}
+      {!uploading && !result && (
+        <Stack spacing={2}>
+          <MenuzSelectorLanguage handleLanguageSelect={(theme) => handleLayoutUpdate(theme)} />
+          <MenuzUploaderImage handleImageUpload={handleImageUpload} />
+        </Stack>
+      )}
       {!uploading && result && (
         <Stack spacing={2}>
           <MenuzAccordionList content={result} />

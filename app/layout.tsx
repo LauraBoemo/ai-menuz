@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { mainTheme } from "./themes";
-import { ThemeProvider } from "@mui/material/styles";
 
 export const metadata: Metadata = {
   title: "Menuz",
@@ -15,9 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ margin: 0 }}>
-        <ThemeProvider theme={mainTheme}>
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );

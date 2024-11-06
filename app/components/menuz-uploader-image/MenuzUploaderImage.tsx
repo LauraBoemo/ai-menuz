@@ -2,20 +2,20 @@
 
 import React, { useState } from "react";
 import { Stack } from "@mui/material";
-import { MenuzImageSelector, MenuzImageSelectorProps, ImageType } from "../menuz-image-selector";
+import { MenuzSelectorImage, MenuzSelectorImageProps, ImageType } from "../menuz-selector-image";
 import { MenuzButton } from "../menuz-button";
   
-type MenuzImageUploaderProps = Omit<MenuzImageSelectorProps, "value" | "onChange"> & {
+type MenuzUploaderImageProps = Omit<MenuzSelectorImageProps, "value" | "onChange"> & {
   handleImageUpload: (file: File) => void,
 };
 
-export const MenuzImageUploader: React.FC<MenuzImageUploaderProps> = ({ handleImageUpload, ...props }) => {
+export const MenuzUploaderImage: React.FC<MenuzUploaderImageProps> = ({ handleImageUpload, ...props }) => {
     const [image, setImage] = useState<ImageType>(null!);
     const [file, setFile] = useState<File | null>(null);
   
     return (
       <Stack direction={"column"} spacing={1}>
-        <MenuzImageSelector
+        <MenuzSelectorImage
           height={"40vh"}
           acceptType={["jpg", "jpeg", "png"]}
           maxFileSize={3000000}
@@ -41,4 +41,4 @@ export const MenuzImageUploader: React.FC<MenuzImageUploaderProps> = ({ handleIm
     );
 };
 
-export default MenuzImageUploader;
+export default MenuzUploaderImage;
