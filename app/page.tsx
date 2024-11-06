@@ -1,5 +1,5 @@
 import { Box, Grid2 as Grid } from "@mui/material";
-import { MyMenuBody, MyMenuFooter, MyMenuHeader } from "./components";
+import { Body, Footer, Header } from "./components";
 
 export default function Page() {
   return ( 
@@ -15,7 +15,7 @@ export default function Page() {
           size={{ xs: 12, md: 5 }} 
           height={{ xs: "10vh", md: "100vh" }} 
         >
-          <MyMenuHeader />
+          <Header />
         </Grid>
         <Grid 
           container
@@ -28,14 +28,14 @@ export default function Page() {
             justifyItems={"center"}
             height={{ xs: "80vh", md: "90vh" }} 
           >
-            <MyMenuBody />
+            <Body />
           </Grid>
           <Grid 
             size={12} 
             height={"10vh"} 
             alignContent={"center"}
           >
-            <MyMenuFooter />
+            <Footer />
           </Grid>
         </Grid>
       </Grid>

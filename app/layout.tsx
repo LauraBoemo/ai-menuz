@@ -3,7 +3,7 @@ import { mainTheme } from "./themes";
 import { ThemeProvider } from "@mui/material/styles";
 
 export const metadata: Metadata = {
-  title: "My Menu",
+  title: "Menuz",
   description: "Find the taste in the text.",
 };
 

@@ -48,7 +48,7 @@ const StyledCloseIcon = styled(CloseIcon)(() => ({
   fontSize: "1.2rem",
 }));
 
-export type ImageSelectorProps = Omit<ImageUploadingPropsType, "value" | "onChange"> & {
+export type MenuzImageSelectorProps = Omit<ImageUploadingPropsType, "value" | "onChange"> & {
   value: ImageType | null;
   onChange: (image: ImageType | null) => void;
   uploadTitle?: string;
@@ -62,7 +62,7 @@ export type ImageSelectorProps = Omit<ImageUploadingPropsType, "value" | "onChan
   width?: number | string;
 };
 
-export const ImageSelector: React.FC<ImageSelectorProps> = ({
+export const MenuzImageSelector: React.FC<MenuzImageSelectorProps> = ({
   uploadTitle,
   updateTitle,
   onChange,
@@ -119,4 +119,4 @@ export const ImageSelector: React.FC<ImageSelectorProps> = ({
   );
 };
 
-export default ImageSelector;
+export default MenuzImageSelector;

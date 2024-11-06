@@ -1,9 +1,0 @@
-.successAlert {
-  font-weight: lighter;
-  color: var(--success);
-}
-
-.errorAlert {
-  font-weight: lighter;
-  color: var(--error);
-}

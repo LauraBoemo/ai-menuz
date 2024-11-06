@@ -2,7 +2,7 @@
 
 import { Button, styled } from "@mui/material";
 
-export const MyMenuButton = styled(Button)(({ theme }) => ({
+export const MenuzButton = styled(Button)(({ theme }) => ({
     ...theme.typography.body1,
     height: "40px",
     color: theme.palette.primary.light,
@@ -14,4 +14,4 @@ export const MyMenuButton = styled(Button)(({ theme }) => ({
     },
   }));
   
-  export default MyMenuButton;
+  export default MenuzButton;

@@ -1,14 +1,14 @@
 import { Stack, Typography } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { MyMenuAccordion } from "../mymenu-accordion";
-import MyMenuAccordionDetails from "../mymenu-accordion-details/MyMenuAccordionDetails";
-import { MyMenuAccordionSummary } from "../mymenu-accordion-summary";
+import { MenuzAccordion } from "../menuz-accordion";
+import { MenuzAccordionSummary } from "../menuz-accordion-summary";
+import MenuzAccordionDetails from "../menuz-accordion-details/MenuzAccordionDetails";
 
-interface ResultListProps {
+interface MenuzAccordionListProps {
   content: string;
 }
 
-export const ResultList = ({ content }: ResultListProps) => {
+export const MenuzAccordionList = ({ content }: MenuzAccordionListProps) => {
   const regex = /```json([\s\S]*?)```/;
   const match = content.match(regex);
   const menuData = JSON.parse(match[1].trim());
@@ -18,16 +18,16 @@ export const ResultList = ({ content }: ResultListProps) => {
       {
         menuData.recipes.map((data) => {
           return (
-            <MyMenuAccordion>
-              <MyMenuAccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <MenuzAccordion>
+              <MenuzAccordionSummary expandIcon={<ExpandMoreIcon />}>
                 <Typography>{data.name}</Typography>
-              </MyMenuAccordionSummary>
-              <MyMenuAccordionDetails>
+              </MenuzAccordionSummary>
+              <MenuzAccordionDetails>
                 <Typography>
                   {data.ingredients}
                 </Typography>
-              </MyMenuAccordionDetails>
-            </MyMenuAccordion>
+              </MenuzAccordionDetails>
+            </MenuzAccordion>
           )
         })
       }
@@ -35,4 +35,4 @@ export const ResultList = ({ content }: ResultListProps) => {
   );
 }
 
-export default ResultList;
+export default MenuzAccordionList;

@@ -6,7 +6,7 @@ import MuiAccordionSummary, {
   AccordionSummaryProps,
 } from '@mui/material/AccordionSummary';
 
-export const MyMenuAccordionSummary = styled((props: AccordionSummaryProps) => (
+export const MenuzAccordionSummary = styled((props: AccordionSummaryProps) => (
   <MuiAccordionSummary
     expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
     {...props}
@@ -25,4 +25,4 @@ export const MyMenuAccordionSummary = styled((props: AccordionSummaryProps) => (
   }),
 }));
 
-export default MyMenuAccordionSummary;
+export default MenuzAccordionSummary;

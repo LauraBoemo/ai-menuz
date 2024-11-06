@@ -2,20 +2,20 @@
 
 import React, { useState } from "react";
 import { Stack } from "@mui/material";
-import { ImageSelector, ImageSelectorProps, ImageType } from "../image-selector";
-import { MyMenuButton } from "../mymenu-button";
+import { MenuzImageSelector, MenuzImageSelectorProps, ImageType } from "../menuz-image-selector";
+import { MenuzButton } from "../menuz-button";
   
-type ImageUploaderProps = Omit<ImageSelectorProps, "value" | "onChange"> & {
+type MenuzImageUploaderProps = Omit<MenuzImageSelectorProps, "value" | "onChange"> & {
   handleImageUpload: (file: File) => void,
 };
 
-export const ImageUploader: React.FC<ImageUploaderProps> = ({ handleImageUpload, ...props }) => {
+export const MenuzImageUploader: React.FC<MenuzImageUploaderProps> = ({ handleImageUpload, ...props }) => {
     const [image, setImage] = useState<ImageType>(null!);
     const [file, setFile] = useState<File | null>(null);
   
     return (
       <Stack direction={"column"} spacing={1}>
-        <ImageSelector
+        <MenuzImageSelector
           height={"40vh"}
           acceptType={["jpg", "jpeg", "png"]}
           maxFileSize={3000000}
@@ -30,15 +30,15 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ handleImageUpload,
           updateTitle={"You can edit the Menu's picture by clicking here!"}
           {...props}
         />
-        <MyMenuButton 
+        <MenuzButton 
           onClick={() => handleImageUpload(file)}
           variant={"contained"} 
           disabled={!image?.dataURL}
         >
           View Menu&apos;s Details
-        </MyMenuButton>
+        </MenuzButton>
       </Stack>
     );
 };
 
-export default ImageUploader;
+export default MenuzImageUploader;
