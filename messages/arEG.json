@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "AISignature": "مدعوم بالذكاء الاصطناعي",
+    "menuUploadButtonLabel": "عرض تفاصيل القائمة",
+    "menuUploadTitle": "انقر هنا وأضف صورة القائمة من الكاميرا أو المعرض!",
+    "menuUpdateTitle": "يمكنك تعديل صورة القائمة بالنقر هنا!",
+    "menuUploading": "قراءة القائمة...",
+    "menuOtherUploadButtonLabel": "رفع قائمة أخرى"
+  }
+}

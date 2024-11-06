@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "AISignature": "С поддержкой ИИ",
+    "menuUploadButtonLabel": "Посмотреть подробности меню",
+    "menuUploadTitle": "Нажмите здесь и добавьте изображение меню с вашей камеры или галереи!",
+    "menuUpdateTitle": "Вы можете отредактировать изображение меню, кликнув здесь!",
+    "menuUploading": "Чтение меню...",
+    "menuOtherUploadButtonLabel": "Загрузить другое меню"
+  }
+}

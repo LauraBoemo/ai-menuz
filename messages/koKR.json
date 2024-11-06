@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "AISignature": "AI로 구동됨",
+    "menuUploadButtonLabel": "메뉴 세부 사항 보기",
+    "menuUploadTitle": "여기를 클릭하고 카메라 또는 갤러리에서 메뉴 이미지를 추가하세요!",
+    "menuUpdateTitle": "여기를 클릭하여 메뉴 이미지를 편집할 수 있습니다!",
+    "menuUploading": "메뉴를 읽는 중...",
+    "menuOtherUploadButtonLabel": "다른 메뉴 업로드"
+  }
+}

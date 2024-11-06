@@ -3,23 +3,24 @@ import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import * as locales from '@mui/material/locale';
 import { localeFlagMap } from './utils';
-import { useEffect } from 'react';
+import { useEffect, useTransition } from 'react';
+import { setUserLocale } from '../../services/locale';
 
 export type SupportedLocales = keyof typeof locales;
 
-interface MenuzSelectorLanguageProps {
-  handleLanguageSelect: (locale: SupportedLocales) => void;
-}
-
-export const MenuzSelectorLanguage = ({ handleLanguageSelect }: MenuzSelectorLanguageProps) => {
+export const MenuzSelectorLanguage = () => {
+  const [isPending, startTransition] = useTransition();
   const [locale, setLocale] = React.useState<SupportedLocales>('enUS');
 
   useEffect(() => {
-    handleLanguageSelect(locale);
+    startTransition(() => {
+      setUserLocale(locale);
+    });
   }, [locale])
 
   return (
     <Autocomplete
+      loading={isPending}
       options={Object.keys(locales)}
       getOptionLabel={(key) => `${localeFlagMap[key] || ""}  ${key.substring(0, 2)}-${key.substring(2, 4)}`}
       style={{ width: 300 }}

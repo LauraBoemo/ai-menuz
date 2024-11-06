@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "AISignature": "由AI驱动",
+    "menuUploadButtonLabel": "查看菜单详情",
+    "menuUploadTitle": "点击这里并从您的相机或图库添加菜单图片！",
+    "menuUpdateTitle": "您可以通过点击这里编辑菜单的图片！",
+    "menuUploading": "正在读取菜单...",
+    "menuOtherUploadButtonLabel": "上传另一个菜单"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "AISignature": "Powered by AI",
+    "menuUploadButtonLabel": "View Menu's Details",
+    "menuUploadTitle": "Click here and add the Menu's picture from your camera or gallery!",
+    "menuUpdateTitle": "You can edit the Menu's picture by clicking here!",
+    "menuUploading": "Reading the Menu...",
+    "menuOtherUploadButtonLabel": "Upload another menu"
+  }
+}

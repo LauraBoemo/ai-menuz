@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "AISignature": "Підтримується ШІ",
+    "menuUploadButtonLabel": "Переглянути деталі меню",
+    "menuUploadTitle": "Натисніть тут і додайте зображення меню з вашої камери або галереї!",
+    "menuUpdateTitle": "Ви можете редагувати зображення меню, натиснувши тут!",
+    "menuUploading": "Читання меню...",
+    "menuOtherUploadButtonLabel": "Завантажити інше меню"
+  }
+}

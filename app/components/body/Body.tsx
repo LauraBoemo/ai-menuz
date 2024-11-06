@@ -7,13 +7,12 @@ import { handleAIReading, handleAIUpload, handleS3Upload } from "./utils";
 import { MenuzUploaderImage } from "../menuz-uploader-image";
 import { MenuzButton } from "../menuz-button";
 import { MenuzAccordionList } from "../menuz-accordion-list";
-import { MenuzSelectorLanguage, SupportedLocales } from "../menuz-selector-language";
+import { MenuzSelectorLanguage } from "../menuz-selector-language";
+import { useTranslations } from "next-intl";
 
-interface BodyProps {
-  handleLayoutUpdate: (theme: SupportedLocales) => void;
-}
+export const Body = () => {
+  const t = useTranslations('HomePage');
 
-export const Body = ({ handleLayoutUpdate }: BodyProps) => {
   const [error, setError] = useState<string>("");
   const [uploading, setUploading] = useState(false);
   const [result, setResult] = useState<string>("");
@@ -46,10 +45,10 @@ export const Body = ({ handleLayoutUpdate }: BodyProps) => {
       justifyContent={"center"}
     >
       {error && <Typography variant={"body1"} textAlign={"center"} color={"error"}>{error}</Typography>}
-      {uploading && <Typography>Reading the Menu...</Typography>}
+      {uploading && <Typography>{t('menuUploading')}</Typography>}
       {!uploading && !result && (
         <Stack spacing={2}>
-          <MenuzSelectorLanguage handleLanguageSelect={(theme) => handleLayoutUpdate(theme)} />
+          <MenuzSelectorLanguage />
           <MenuzUploaderImage handleImageUpload={handleImageUpload} />
         </Stack>
       )}
@@ -57,7 +56,7 @@ export const Body = ({ handleLayoutUpdate }: BodyProps) => {
         <Stack spacing={2}>
           <MenuzAccordionList content={result} />
           <MenuzButton onClick={() => setResult("")}>
-            Upload another menu
+            {t('menuOtherUploadButtonLabel')}
           </MenuzButton>
         </Stack>
       )}

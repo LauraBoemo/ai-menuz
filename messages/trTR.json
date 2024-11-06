@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "AISignature": "Yapay Zeka ile güçlendirilmiştir",
+    "menuUploadButtonLabel": "Menü Detaylarını Görüntüle",
+    "menuUploadTitle": "Buraya tıklayın ve menü resmini kameranızdan veya galerinizden ekleyin!",
+    "menuUpdateTitle": "Buraya tıklayarak menü resmini düzenleyebilirsiniz!",
+    "menuUploading": "Menü okuma...",
+    "menuOtherUploadButtonLabel": "Başka bir menü yükle"
+  }
+}

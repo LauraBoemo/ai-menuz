@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "AISignature": "এআই দ্বারা চালিত",
+    "menuUploadButtonLabel": "মেনুর বিস্তারিত দেখুন",
+    "menuUploadTitle": "এখানে ক্লিক করুন এবং আপনার ক্যামেরা বা গ্যালারি থেকে মেনুর ছবি যোগ করুন!",
+    "menuUpdateTitle": "আপনি এখানে ক্লিক করে মেনুর ছবি সম্পাদনা করতে পারেন!",
+    "menuUploading": "মেনু পড়া হচ্ছে...",
+    "menuOtherUploadButtonLabel": "আরেকটি মেনু আপলোড করুন"
+  }
+}

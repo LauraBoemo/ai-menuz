@@ -1,8 +1,11 @@
 import { Typography } from "@mui/material";
+import { useTranslations } from "next-intl";
 
 export const Footer = () => {
+  const t = useTranslations('HomePage');
+  
   return ( 
-    <Typography variant={"body1"}>Powered by AI</Typography>
+    <Typography variant={"body1"}>{t("AISignature")}</Typography>
   );
 }
 

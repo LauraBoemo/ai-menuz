@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "AISignature": "Hỗ trợ bởi AI",
+    "menuUploadButtonLabel": "Xem chi tiết thực đơn",
+    "menuUploadTitle": "Nhấn vào đây và thêm ảnh thực đơn từ camera hoặc thư viện của bạn!",
+    "menuUpdateTitle": "Bạn có thể chỉnh sửa ảnh thực đơn bằng cách nhấn vào đây!",
+    "menuUploading": "Đang đọc thực đơn...",
+    "menuOtherUploadButtonLabel": "Tải lên thực đơn khác"
+  }
+}

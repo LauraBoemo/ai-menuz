@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "AISignature": "Impulsado por IA",
+    "menuUploadButtonLabel": "Ver detalles del menú",
+    "menuUploadTitle": "¡Haz clic aquí y agrega la imagen del menú desde tu cámara o galería!",
+    "menuUpdateTitle": "Puedes editar la imagen del menú haciendo clic aquí.",
+    "menuUploading": "Leyendo el menú...",
+    "menuOtherUploadButtonLabel": "Subir otro menú"
+  }
+}
