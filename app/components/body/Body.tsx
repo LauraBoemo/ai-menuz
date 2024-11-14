@@ -40,10 +40,7 @@ export const Body = () => {
 
   return (
     <Stack
-      maxWidth={{ xs: "300px", sm: "500px" }}
-      maxHeight={"300px"}
-      minWidth={{ xs: "300px", sm: "500px" }}
-      minHeight={"300px"}
+      margin={"50px"}
       justifyContent={"center"}
     >
       {error && <Typography variant={"body1"} textAlign={"center"} color={"error"}>{error}</Typography>}
