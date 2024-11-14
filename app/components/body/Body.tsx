@@ -41,6 +41,8 @@ export const Body = () => {
   return (
     <Stack
       margin={"50px"}
+      maxWidth={"200px"}
+      minWidth={"200px"}
       justifyContent={"center"}
     >
       {error && <Typography variant={"body1"} textAlign={"center"} color={"error"}>{error}</Typography>}
