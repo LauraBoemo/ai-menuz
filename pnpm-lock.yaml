@@ -45,8 +45,8 @@ dependencies:
     specifier: ^2.1497.0
     version: 2.1497.0
   config:
-    specifier: link:@/i18n/config
-    version: link:@/i18n/config
+    specifier: ./app/i18n/config
+    version: link:app/i18n/config
   encoding:
     specifier: ^0.1.13
     version: 0.1.13
