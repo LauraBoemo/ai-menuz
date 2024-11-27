@@ -1,3 +1,3 @@
-import { SupportedDesiredLocales } from "../components/menuz-selector-language";
+import { SupportedLocales } from "../components/menuz-selector-language/MenuzSelectorLanguage";
 
-export const defaultLocale: SupportedDesiredLocales = 'enUS';
+export const defaultLocale: SupportedLocales = 'enUS';
