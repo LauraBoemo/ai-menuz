@@ -1,8 +1,8 @@
 import {getRequestConfig} from 'next-intl/server';
-import {getDesiredLocale} from '../services/locale';
+import {getUserLocale} from '../services/locale';
 
 export default getRequestConfig(async () => {
-  const locale = await getDesiredLocale();
+  const locale = await getUserLocale();
 
   let messages;
   try {

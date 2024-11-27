@@ -4,17 +4,17 @@ import TextField from '@mui/material/TextField';
 import * as locales from '@mui/material/locale';
 import { localeFlagMap } from './utils';
 import { useEffect, useTransition } from 'react';
-import { setDesiredLocale } from '../../services/locale';
+import { setUserLocale } from '../../services/locale';
 
-export type SupportedDesiredLocales = keyof typeof locales;
+export type SupportedLocales = keyof typeof locales;
 
-export const MenuzSelectorDesiredLanguage = () => {
+export const MenuzSelectorLanguage = () => {
   const [isPending, startTransition] = useTransition();
-  const [locale, setLocale] = React.useState<SupportedDesiredLocales>('enUS');
+  const [locale, setLocale] = React.useState<SupportedLocales>('enUS');
 
   useEffect(() => {
     startTransition(() => {
-      setDesiredLocale(locale);
+      setUserLocale(locale);
     });
   }, [locale])
 
@@ -28,7 +28,7 @@ export const MenuzSelectorDesiredLanguage = () => {
       value={locale}
       disableClearable
       onChange={(event: any, newValue: string | null) => {
-        setLocale(newValue as SupportedDesiredLocales);
+        setLocale(newValue as SupportedLocales);
       }}
       renderInput={(params) => (
         <TextField {...params} fullWidth />
@@ -37,4 +37,4 @@ export const MenuzSelectorDesiredLanguage = () => {
   );
 }
 
-export default MenuzSelectorDesiredLanguage;
+export default MenuzSelectorLanguage;

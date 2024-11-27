@@ -7,8 +7,8 @@ import { handleAIReading, handleAIUpload, handleS3Upload } from "./utils";
 import { MenuzUploaderImage } from "../menuz-uploader-image";
 import { MenuzButton } from "../menuz-button";
 import { MenuzAccordionList } from "../menuz-accordion-list";
+import { MenuzSelectorLanguage } from "../menuz-selector-language";
 import { useTranslations } from "next-intl";
-import { MenuzSelectorDesiredLanguage } from "../menuz-selector-language";
 
 export const Body = () => {
   const t = useTranslations('HomePage');
@@ -52,8 +52,7 @@ export const Body = () => {
       {uploading && <Typography>{t('menuUploading')}</Typography>}
       {!uploading && !result && (
         <Stack spacing={2}>
-          <Typography>Select your Language</Typography>
-          <MenuzSelectorDesiredLanguage />
+          <MenuzSelectorLanguage />
           <MenuzUploaderImage handleImageUpload={handleImageUpload} />
         </Stack>
       )}
