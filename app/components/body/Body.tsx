@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Stack, Typography } from "@mui/material";
-import { handleAIReading, handleAIUpload, handleGoogleCloudTranslation, handleS3Upload } from "./utils";
+import { handleAIReading, handleAIUpload, handleS3Upload } from "./utils";
 
 import { MenuzUploaderImage } from "../menuz-uploader-image";
 import { MenuzButton } from "../menuz-button";
