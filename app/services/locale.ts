@@ -2,14 +2,23 @@
 
 import {cookies} from 'next/headers';
 import { defaultLocale } from '../i18n/config';
-import { SupportedLocales } from '../components/menuz-selector-language';
+import { SupportedCurrentLocales, SupportedDesiredLocales } from '../components/menuz-selector-language';
 
-const COOKIE_NAME = 'NEXT_LOCALE';
+const COOKIE_CURRENT_LOCALE = 'COOKIE_CURRENT_LOCALE';
+const COOKIE_DESIRED_LOCALE = 'COOKIE_DESIRED_LOCALE';
 
-export async function getUserLocale() {
-  return cookies().get(COOKIE_NAME)?.value || defaultLocale;
+export async function getCurrentLocale() {
+  return cookies().get(COOKIE_CURRENT_LOCALE)?.value || defaultLocale;
 }
 
-export async function setUserLocale(locale: SupportedLocales) {
-  cookies().set(COOKIE_NAME, locale);
+export async function getDesiredLocale() {
+  return cookies().get(COOKIE_DESIRED_LOCALE)?.value || defaultLocale;
+}
+
+export async function setCurrentLocale(locale: SupportedCurrentLocales) {
+  cookies().set(COOKIE_CURRENT_LOCALE, locale);
+}
+
+export async function setDesiredLocale(locale: SupportedDesiredLocales) {
+  cookies().set(COOKIE_DESIRED_LOCALE, locale);
 }

@@ -1,1 +1,2 @@
-export * from "./MenuzSelectorLanguage";
+export * from "./MenuzSelectorCurrentLanguage";
+export * from "./MenuzSelectorDesiredLanguage";
