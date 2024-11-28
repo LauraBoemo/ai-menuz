@@ -34,7 +34,7 @@ const mainTheme = createTheme({
         fontSize: 80,
         lineHeight: "30px",
         fontFamily:
-          "DMSerifDisplay, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif --important",
+          "DMSerifDisplay, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
       },
       body1: {
         fontStyle: "normal",

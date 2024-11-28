@@ -19,12 +19,13 @@ export default function Page() {
           textAlign={"center"}
         >
           <Grid 
-            size={12} 
+            size={{ xs: 12, md: 5 }} 
             alignContent={"center"} 
             justifyItems={"center"}
-            height={{ xs: "80vh", md: "90vh" }} 
+            height={{ xs: "100vh" }} 
           >
             <Body />
+            <Footer />
           </Grid>
         </Grid>
       </Grid>
