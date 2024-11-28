@@ -6,7 +6,7 @@ const mainTheme = createTheme({
     palette: {
       primary: {
         main: "#4B4B4B",
-        dark: "#B13E3D",
+        dark: "#6C181E",
         light: "#F8F5ED",
         contrastText: "#F2E1CB",
       },
@@ -31,8 +31,10 @@ const mainTheme = createTheme({
       h1: {
         fontStyle: "normal",
         fontWeight: "200",
-        fontSize: 40,
+        fontSize: 80,
         lineHeight: "30px",
+        fontFamily:
+          "DMSerifDisplay, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif --important",
       },
       body1: {
         fontStyle: "normal",

@@ -12,14 +12,7 @@ export default function Page() {
         margin={"auto"}
         textAlign={"center"}
       >
-        <Grid 
-          alignContent={"center"}
-          bgcolor={"primary.dark"} 
-          size={{ xs: 12, md: 5 }} 
-          height={{ xs: "10vh", md: "100vh" }} 
-        >
-          <Header />
-        </Grid>
+        <Header />
         <Grid 
           container
           margin={"auto"}
@@ -32,13 +25,6 @@ export default function Page() {
             height={{ xs: "80vh", md: "90vh" }} 
           >
             <Body />
-          </Grid>
-          <Grid 
-            size={12} 
-            height={"10vh"} 
-            alignContent={"center"}
-          >
-            <Footer />
           </Grid>
         </Grid>
       </Grid>
