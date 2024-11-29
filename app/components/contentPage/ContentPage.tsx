@@ -46,13 +46,13 @@ export const ContentPage = () => {
       size={{ xs: 12, md: 7 }} 
       position={"relative"}
       alignContent={"center"}
-      bgcolor={"primary.dark"} 
+      bgcolor={"primary.light"} 
       padding={1}
       height={"100vh"} 
     >
       <Stack 
         border={"1px solid"} 
-        borderColor={"primary.light"}
+        borderColor={"primary.dark"}
         justifyContent={"center"}
         width={"100%"}
         height={"100%"} 
