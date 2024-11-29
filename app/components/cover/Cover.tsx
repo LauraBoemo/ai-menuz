@@ -1,7 +1,7 @@
 import { Grid2 as Grid, Stack } from "@mui/material";
 import { Greetings, ImageSet, LanguageSelector, SwipeAlert, Title } from "./utils";
 
-export const Header = () => {
+export const Cover = () => {
   return ( 
     <Grid 
       size={{ xs: 12, md: 7 }} 
@@ -12,7 +12,8 @@ export const Header = () => {
       height={"100vh"} 
     >
       <Stack 
-        border={"1px solid white"} 
+        border={"1px solid"} 
+        borderColor={"primary.light"}
         justifyContent={"center"}
         width={"100%"}
         height={"100%"} 
@@ -30,4 +31,4 @@ export const Header = () => {
   );
 }
 
-export default Header;
+export default Cover;

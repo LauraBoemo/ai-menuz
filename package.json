@@ -22,6 +22,7 @@
     "aws-sdk": "^2.1497.0",
     "config": "./app/i18n/config",
     "encoding": "^0.1.13",
+    "keen-slider": "^6.8.6",
     "next": "^14.0.2",
     "next-intl": "^3.24.0",
     "react": "18.2.0",

@@ -1,34 +1,18 @@
 'use client'
 
 import React from "react";
-import { Body, Footer, Header } from "./components";
-import { Box, Grid2 as Grid } from "@mui/material";
+import { ContentPage, Cover } from "./components";
+
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
 
 export default function Page() {
+  const [ref] = useKeenSlider<HTMLDivElement>()
+
   return ( 
-    <Box bgcolor={"primary.light"}>
-      <Grid 
-        container 
-        margin={"auto"}
-        textAlign={"center"}
-      >
-        <Header />
-        <Grid 
-          container
-          margin={"auto"}
-          textAlign={"center"}
-        >
-          <Grid 
-            size={{ xs: 12, md: 5 }} 
-            alignContent={"center"} 
-            justifyItems={"center"}
-            height={{ xs: "100vh" }} 
-          >
-            <Body />
-            <Footer />
-          </Grid>
-        </Grid>
-      </Grid>
-    </Box>
+    <div ref={ref} className="keen-slider">
+      <div className="keen-slider__slide"><Cover /></div>
+      <div className="keen-slider__slide"><ContentPage /></div>
+    </div>
   );
 }

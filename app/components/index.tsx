@@ -1,3 +1,3 @@
-export * from "./header";
-export * from "./body";
+export * from "./cover";
+export * from "./contentPage";
 export * from "./footer";

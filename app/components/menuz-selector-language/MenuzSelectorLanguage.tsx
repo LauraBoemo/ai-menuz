@@ -23,7 +23,7 @@ export const MenuzSelectorLanguage = () => {
       loading={isPending}
       options={Object.keys(locales)}
       getOptionLabel={(key) => `${localeFlagMap[key] || ""}  ${key.substring(0, 2)}-${key.substring(2, 4)}`}
-      style={{ width: 250 }}
+      style={{ minWidth: 250 }}
       value={locale}
       disableClearable
       onChange={(event: any, newValue: string | null) => {

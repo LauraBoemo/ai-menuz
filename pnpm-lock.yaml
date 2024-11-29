@@ -50,6 +50,9 @@ dependencies:
   encoding:
     specifier: ^0.1.13
     version: 0.1.13
+  keen-slider:
+    specifier: ^6.8.6
+    version: 6.8.6
   next:
     specifier: ^14.0.2
     version: 14.0.2(react-dom@18.2.0)(react@18.2.0)
@@ -2348,6 +2351,10 @@ packages:
 
   /json-parse-even-better-errors@2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
+    dev: false
+
+  /keen-slider@6.8.6:
+    resolution: {integrity: sha512-dcEQ7GDBpCjUQA8XZeWh3oBBLLmyn8aoeIQFGL/NTVkoEOsmlnXqA4QykUm/SncolAZYGsEk/PfUhLZ7mwMM2w==}
     dev: false
 
   /leven@2.1.0:

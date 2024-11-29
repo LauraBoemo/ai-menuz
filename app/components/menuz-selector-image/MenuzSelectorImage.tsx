@@ -5,7 +5,8 @@ import React, { useState } from "react";
 import ImageUploading, { ErrorsType, ImageType, ImageUploadingPropsType } from "react-images-uploading";
 import styled from "styled-components";
 import CloseIcon from '@mui/icons-material/Close';
-import ImageIcon from '@mui/icons-material/Image';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 export type { ImageType, ErrorsType };
 
@@ -20,7 +21,7 @@ const StyledImage = styled("img")(() => ({
 const StyledStack = styled(Stack)(() => ({
   height: "100%",
   borderRadius: 6,
-  border: "1px dashed #4B4B4B",
+  border: "1px dashed #707070",
   width: '100%',
   background: "#4b4b4b1b",
   transition: "all .175s ease-in",
@@ -104,8 +105,9 @@ export const MenuzSelectorImage: React.FC<MenuzSelectorImageProps> = ({
               )}
               {(!imageList?.length || isHovering) && (
                 <StyledContentWrapper alignItems="center">
-                  <Stack alignItems="center" textAlign="center" direction="column" p={1} spacing={1}>
-                    <ImageIcon />
+                  <Stack alignItems="center" textAlign="center" justifyContent={"center"} direction="row" p={1}>
+                    <MenuBookIcon sx={{ color: "primary.dark" }} />
+                    <CameraAltIcon sx={{ color: "primary.dark" }} />
                     <Typography variant={"body1"}>{!!imageList?.length ? updateTitle : uploadTitle}</Typography>
                   </Stack>
                 </StyledContentWrapper>
