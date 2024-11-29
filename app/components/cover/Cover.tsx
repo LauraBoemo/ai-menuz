@@ -20,7 +20,7 @@ export const Cover = () => {
         top={0}
       >
         <ImageSet />
-        <Stack alignItems={"center"} color={"primary.light"} gap={5}>
+        <Stack alignItems={"center"} color={"primary.light"} mt={5} gap={4}>
           <Title />
           <Greetings />
           <LanguageSelector />

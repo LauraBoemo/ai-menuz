@@ -60,7 +60,7 @@ const mainTheme = createTheme({
         fontStyle: "normal",
         fontWeight: "200",
         fontSize: 16,
-        lineHeight: "15px",
+        lineHeight: "20px",
         fontFamily: pinyon.style.fontFamily,
       },
       body1: {

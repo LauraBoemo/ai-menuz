@@ -23,7 +23,10 @@ export const Greetings = () => {
         <Typography variant={"body1"}>!</Typography>
       </Stack>
       <Typography variant={"body1"}>Hard time reading your menu?</Typography>
-      <Typography variant={"h5"} mt={1} fontSize={25}>We can help you!</Typography>
+      <Stack direction={"row"} gap={0.5}>
+        <Typography variant={"body1"}>Our AI can translate and explain it</Typography>
+        <Typography variant={"h5"} fontSize={22}>for you!</Typography>
+      </Stack>
       <CenteredOrnamentLight />
     </Stack>
   );
