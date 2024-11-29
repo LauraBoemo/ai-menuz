@@ -1,6 +1,28 @@
 'use client'
 
 import { createTheme } from "@mui/material/styles";
+import { Pinyon_Script, Poppins, IBM_Plex_Sans } from 'next/font/google'
+
+const pinyon = Pinyon_Script({
+  subsets: ['latin'],
+  variable: '--font-pinyon',
+  display: 'swap',
+  weight: "400"
+})
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  variable: '--font-poppins',
+  display: 'swap',
+  weight: "200"
+})
+
+const IBM = IBM_Plex_Sans({
+  subsets: ['latin'],
+  variable: '--font-poppins',
+  display: 'swap',
+  weight: "600"
+})
 
 const mainTheme = createTheme({
     palette: {
@@ -24,23 +46,35 @@ const mainTheme = createTheme({
       },
     },
     typography: {
-      fontFamily:
-        "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontFamily: poppins.style.fontFamily,
       fontWeightRegular: 300,
       fontWeightMedium: 400,
       h1: {
         fontStyle: "normal",
         fontWeight: "200",
-        fontSize: 80,
+        fontSize: 120,
         lineHeight: "30px",
-        fontFamily:
-          "DMSerifDisplay, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+        fontFamily: pinyon.style.fontFamily,
+      },
+      h5: {
+        fontStyle: "normal",
+        fontWeight: "200",
+        fontSize: 16,
+        lineHeight: "15px",
+        fontFamily: pinyon.style.fontFamily,
       },
       body1: {
         fontStyle: "normal",
         fontWeight: "200",
-        fontSize: 14,
+        fontSize: 16,
         lineHeight: "15px",
+      },
+      body2: {
+        fontStyle: "normal",
+        fontWeight: "200",
+        fontSize: 16,
+        lineHeight: "15px",
+        fontFamily: IBM.style.fontFamily,
       },
     },
 })
