@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Divider, Stack, Typography } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { MenuzAccordion } from "../menuz-accordion";
 import { MenuzAccordionSummary } from "../menuz-accordion-summary";
@@ -23,12 +23,21 @@ export const MenuzAccordionList = ({ content }: MenuzAccordionListProps) => {
                 <Typography>{data.name}</Typography>
               </MenuzAccordionSummary>
               <MenuzAccordionDetails>
-                <Typography textAlign={"left"}>
-                  - {data.ingredients}
-                </Typography>
-                <Typography textAlign={"left"}>
-                  - {data?.suggestion}
-                </Typography>
+                <Stack gap={2.5}>
+                  <Stack gap={2}>
+                    <Typography variant="h5" fontSize={22}>Ingredients</Typography>
+                    <Typography textAlign={"left"}>
+                      {data.ingredients}
+                    </Typography>
+                  </Stack>
+                  <Divider />
+                  <Stack gap={2}>
+                    <Typography variant="h5" fontSize={22}>Feedback</Typography>
+                    <Typography textAlign={"left"}>
+                      {data?.suggestion}
+                    </Typography>
+                  </Stack>
+                </Stack>
               </MenuzAccordionDetails>
             </MenuzAccordion>
           )

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Grid2 as Grid, Stack, Typography } from "@mui/material";
-import { Content, Header, Result, Section, Step } from "./utils";
+import { Header, Result, Section, Step, UploadAnimation } from "./utils";
 import { handleAIUpload, handleS3Upload, handleAIReading } from "./handlers";
 
 import { MenuzUploaderImage } from "../menuz-uploader-image";
@@ -59,16 +59,17 @@ export const ContentPage = () => {
         top={0}
       >
         <Header />
-        <Step number={1} text={"To which language we translate your menu?"} />
-        <Section content={<MenuzSelectorLanguage />} />
-        <Step number={2} text={"Add the menu's picture from your camera or gallery below"} />
         {error && <Typography variant={"body1"} textAlign={"center"} color={"error"}>{error}</Typography>}
-        {uploading && <Typography>{t('menuUploading')}</Typography>}
+        {uploading && <UploadAnimation />}
         {!uploading && !result && (
-          <MenuzUploaderImage handleImageUpload={handleImageUpload} />
+          <>
+            <Step number={1} mb={2} text={"On the previous page (swipe!), select the language the menu should be translated!"} />
+            <Step number={2} text={"Add the menu's picture from your camera or gallery below"} />
+            <MenuzUploaderImage handleImageUpload={handleImageUpload} />
+          </>
         )} 
         {!uploading && result && (
-          <Result result={result} handleSetResult={() => setResult("")} />
+          <Section content={<Result result={result} handleSetResult={() => setResult("")} />} />
         )}
       </Stack>
     </Grid>

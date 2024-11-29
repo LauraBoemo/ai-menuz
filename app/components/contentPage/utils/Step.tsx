@@ -1,8 +1,8 @@
 import { Box, Stack, Typography } from "@mui/material";
 
-export const Step = ({ number, text }) => {
+export const Step = ({ number, text, mb = 0 }) => {
   return ( 
-    <Box width={"100%"} bgcolor={"primary.dark"} color={"primary.light"} py={"20px"} justifyItems={"center"}>
+    <Box mb={mb} width={"100%"} bgcolor={"primary.dark"} color={"primary.light"} py={"20px"} justifyItems={"center"}>
       <Stack direction={"row"} gap={1} mx={2.5}>
         <Typography variant={"h5"} fontSize={22}>{number}.</Typography>
         <Typography>{text}</Typography>

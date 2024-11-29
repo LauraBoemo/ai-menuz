@@ -38,7 +38,7 @@ export const MenuzUploaderImage: React.FC<MenuzUploaderImageProps> = ({ handleIm
           <Typography variant={"h5"} fontSize={22}>3.</Typography>
             <MenuzButton 
               onClick={() => handleImageUpload(file)}
-              variant={"contained"} 
+              variant={"outlined"} 
               disabled={!image?.dataURL}
             >
               <Typography color="primary.light">Click here and generate the menu's content with AI</Typography>

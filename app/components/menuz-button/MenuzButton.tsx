@@ -10,6 +10,10 @@ export const MenuzButton = styled(Button)(({ theme }) => ({
     textTransform: "none",
     backgroundColor: theme.palette.primary.dark,
 
+    "&.MuiButton-outlined": {
+        borderColor: theme.palette.primary.light,
+    },
+
     "&.Mui-disabled": {
         opacity: 0.5,
         color: theme.palette.primary.main,

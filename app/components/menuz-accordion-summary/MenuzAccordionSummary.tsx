@@ -12,7 +12,7 @@ export const MenuzAccordionSummary = styled((props: AccordionSummaryProps) => (
     {...props}
   />
 ))(({ theme }) => ({
-  backgroundColor: 'rgba(0, 0, 0, .03)',
+  borderColor: 'primary.dark',
   flexDirection: 'row-reverse',
   '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
     transform: 'rotate(90deg)',
@@ -21,7 +21,7 @@ export const MenuzAccordionSummary = styled((props: AccordionSummaryProps) => (
     marginLeft: theme.spacing(1),
   },
   ...theme.applyStyles('dark', {
-    backgroundColor: 'rgba(255, 255, 255, .05)',
+    backgroundColor: 'primary.dark',
   }),
 }));
 
