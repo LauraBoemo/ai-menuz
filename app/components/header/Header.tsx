@@ -1,6 +1,5 @@
-import { Grid2 as Grid, Stack, Typography } from "@mui/material";
-import { Greetings, ImageSet } from "./utils";
-import { MenuzSelectorLanguage } from "../menuz-selector-language";
+import { Grid2 as Grid, Stack } from "@mui/material";
+import { Greetings, ImageSet, LanguageSelector, SwipeAlert, Title } from "./utils";
 
 export const Header = () => {
   return ( 
@@ -20,7 +19,12 @@ export const Header = () => {
         top={0}
       >
         <ImageSet />
-        <Greetings />
+        <Stack alignItems={"center"} color={"primary.light"} gap={5}>
+          <Title />
+          <Greetings />
+          <LanguageSelector />
+          <SwipeAlert />
+        </Stack>
       </Stack>
     </Grid>
   );
