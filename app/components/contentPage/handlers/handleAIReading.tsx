@@ -13,11 +13,10 @@ export const handleAIReading = async ({ prompt, config }: HandleAIReadingProps):
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
     generationConfig: config || {
-      maxOutputTokens: 10000,
-      temperature: 0.7,
+        maxOutputTokens: 10000,
+        temperature: 0.7,
     },
   });
-
   try {
     // TODO: this do not want to translate. we will need another ai
     const result = await model.generateContent(`

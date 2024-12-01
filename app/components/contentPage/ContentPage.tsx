@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Grid2 as Grid, Stack, Typography } from "@mui/material";
 import { Header, Result, Section, Step, UploadAnimation } from "./utils";
-import { handleAIUpload, handleS3Upload, handleAIReading } from "./handlers";
+import { handleAIUpload, handleS3Upload, handleAIReading, handleGoogleCloudTranslation } from "./handlers";
 
 import { MenuzUploaderImage } from "../menuz-uploader-image";
 import { MenuzSelectorLanguage } from "../menuz-selector-language";
@@ -24,13 +24,13 @@ export const ContentPage = () => {
 
       const parsedText = await handleAIUpload({ url });
 
-      // const translatedText = await handleGoogleCloudTranslation({ text: parsedText, targetLanguage: document.documentElement.lang })
+      const translatedText = await handleGoogleCloudTranslation({ text: parsedText, targetLanguage: document.documentElement.lang })
 
-      // console.log(translatedText);
+      console.log(translatedText);
 
-      const aiResponse = await handleAIReading({ prompt: parsedText });
+      // const aiResponse = await handleAIReading({ prompt: parsedText });
 
-      setResult(aiResponse);
+      setResult(translatedText);
 
       // TODO: Delete AWS IMAGE
       // await handleS3Delete({ url });
